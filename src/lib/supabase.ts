@@ -6,10 +6,22 @@
  */
 import type { SupabaseClient } from '@supabase/supabase-js';
 
-const url = (import.meta.env.VITE_SUPABASE_URL as string | undefined)?.trim();
+/** Accept pasted URLs with a trailing slash or /rest/v1/ etc. — only the origin matters. */
+function cleanUrl(raw?: string): string | undefined {
+  const v = raw?.trim();
+  if (!v) return undefined;
+  try {
+    const u = new URL(v);
+    return u.protocol === 'https:' ? u.origin : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+const url = cleanUrl(import.meta.env.VITE_SUPABASE_URL as string | undefined);
 const key = (import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined)?.trim();
 
-export const isSupabaseConfigured = !!(url && key && /^https:\/\//.test(url));
+export const isSupabaseConfigured = !!(url && key);
 
 let client: Promise<SupabaseClient> | null = null;
 
