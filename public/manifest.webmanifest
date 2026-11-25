@@ -1,0 +1,9 @@
+{
+  "name": "Study Paws",
+  "short_name": "Study Paws",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FFF8EE",
+  "theme_color": "#FFF1E4",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

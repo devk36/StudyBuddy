@@ -1,0 +1,21 @@
+.focus {
+  position: fixed; inset: 0; z-index: 80;
+  display: flex; flex-direction: column;
+  padding: calc(env(safe-area-inset-top, 0px) + 14px) var(--gutter) calc(var(--safe-b) + 18px);
+  background: var(--page-bg);
+  color: var(--page-ink);
+  overflow-y: auto;
+  animation: fade-in 0.35s ease;
+}
+.focus__top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.focus__body { flex: 1; display: flex; align-items: center; justify-content: center; gap: clamp(16px, 5vw, 64px); flex-wrap: wrap; padding: 16px 0; }
+.focus__side { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.focus__side .bubble { max-width: 260px; }
+.focus__bottom { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.focus__goal { width: min(420px, 100%); }
+.focus__goal .spread { color: var(--page-ink-soft); font-weight: 700; }
+.focus__line { font-size: 1.6rem; text-align: center; color: var(--page-ink-soft); max-width: 620px; line-height: 1.15; }
+@media (max-width: 520px) {
+  .hide-sm { display: none; }
+  .focus__body .dial { width: 270px !important; }
+}

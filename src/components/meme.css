@@ -1,0 +1,50 @@
+.meme {
+  --m-bg: #fff6e6;
+  --m-ink: var(--ink);
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 14px 16px;
+  background: var(--m-bg);
+  color: var(--m-ink);
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+.meme--blush { --m-bg: #fde3e8; }
+.meme--lavender { --m-bg: #ece5fb; }
+.meme--peach { --m-bg: #ffe9dc; }
+.meme--sky { --m-bg: #e3f0fa; }
+.meme--sage { --m-bg: #e6f2e0; }
+.meme--cream { --m-bg: #fff6e6; }
+.meme--night { --m-bg: #2e2b55; --m-ink: #fbf6ff; }
+.meme__top, .meme__bottom { font-family: var(--f-display); font-weight: 600; font-size: 1.05rem; line-height: 1.22; text-wrap: balance; }
+.meme__top { text-transform: lowercase; }
+.meme__bottom { font-family: var(--f-hand); font-size: 1.45rem; font-weight: 700; line-height: 1.05; }
+.meme__art { position: relative; display: flex; justify-content: center; align-items: flex-end; gap: 4px; padding: 6px 0 0; min-height: 120px; }
+.meme__art--two { gap: 0; }
+.meme__art--two .meme__panel + .meme__panel { border-left: 2.5px dashed rgba(90, 66, 80, 0.3); }
+.meme--night .meme__art--two .meme__panel + .meme__panel { border-left-color: rgba(255, 255, 255, 0.3); }
+.meme__panel { display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0; }
+.meme__panel .pet { max-width: 100%; height: auto; }
+.meme__label { font-weight: 800; font-size: 0.8rem; background: rgba(255, 255, 255, 0.75); color: var(--ink); border: 2px solid var(--line); border-radius: 99px; padding: 1px 9px; }
+.meme__sticker { position: absolute; font-size: 1.7rem; filter: drop-shadow(0 2px 0 rgba(90, 66, 80, 0.2)); }
+.meme__sticker--0 { top: 4%; left: 6%; transform: rotate(-12deg); }
+.meme__sticker--1 { top: 10%; right: 6%; transform: rotate(10deg); }
+.meme__sticker--2 { bottom: 10%; left: 10%; transform: rotate(6deg); }
+.meme__img { width: 100%; height: auto; border-radius: 12px; display: block; }
+.meme__credit { font-size: 0.75rem; color: inherit; opacity: 0.8; }
+
+.meme--mini { padding: 10px; gap: 2px; }
+.meme--mini .meme__top { font-size: 0.85rem; }
+.meme--mini .meme__bottom { font-size: 1.12rem; }
+.meme--mini .meme__art { min-height: 70px; }
+.meme--mini .meme__sticker { font-size: 1.1rem; }
+
+.meme--big { padding: 22px 20px 24px; gap: 10px; border-radius: 26px; }
+.meme--big .meme__top { font-size: clamp(1.2rem, 3.4vw, 1.55rem); }
+.meme--big .meme__bottom { font-size: clamp(1.6rem, 4.6vw, 2.15rem); }
+.meme--big .meme__art { min-height: 200px; }
+.meme--big .meme__sticker { font-size: 2.4rem; }
